@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import mobileAds from "react-native-google-mobile-ads";
 
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { useColorScheme } from "@/hooks/use-color-scheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();

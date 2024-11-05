@@ -1,6 +1,6 @@
 import AdContainer from "@/components/ad-container";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
 import { useRef } from "react";
 import { Platform, StyleSheet } from "react-native";
 import {

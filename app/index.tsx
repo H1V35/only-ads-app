@@ -1,12 +1,13 @@
-import { Image, StyleSheet, Pressable, Text } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import ParallaxScrollView from "@/components/parallax-scroll-view";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
 import { Collapsible } from "@/components/Collapsible";
 import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useRouter } from "expo-router";
+import Button from "@/components/button";
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
@@ -42,27 +43,9 @@ export default function HomeScreen() {
             Banner ads are partial adverts which can be integrated within your
             existing application.
           </ThemedText>
-
-          <Pressable
-            style={({ pressed }) => [
-              styles.button,
-              {
-                backgroundColor: Colors[colorScheme ?? "light"].tint,
-                marginTop: 16,
-              },
-              pressed && styles.pressed,
-            ]}
-            onPress={() => router.navigate("/banner-ads")}
-          >
-            <Text
-              style={[
-                styles.buttonText,
-                { color: colorScheme === "light" ? "#fff" : "#000" },
-              ]}
-            >
-              See more
-            </Text>
-          </Pressable>
+          <Button onPress={() => router.navigate("/banner-ads")}>
+            See more
+          </Button>
         </Collapsible>
       </ThemedView>
     </ParallaxScrollView>
@@ -85,20 +68,5 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: "absolute",
-  },
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  buttonText: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "500",
-  },
-  pressed: {
-    opacity: 0.6,
   },
 });
