@@ -29,7 +29,14 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-1358696264873565~5087230240",
+          "iosAppId": "ca-app-pub-1358696264873565~9880391925"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
