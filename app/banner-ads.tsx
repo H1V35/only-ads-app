@@ -24,21 +24,26 @@ export default function BannerAdsScreen() {
           A Banner only takes up a limited area of the application and displays
           an advert within the area.
         </ThemedText>
-      </ThemedView>
 
-      <AdContainer
-        bannerRef={bannerRef}
-        unitId={TestIds.BANNER}
-        size={"300x600"}
-      />
+        <ThemedView style={styles.sectionContainer}>
+          <AdContainer
+            bannerRef={bannerRef}
+            unitId={TestIds.BANNER}
+            size={"300x600"}
+          />
+        </ThemedView>
+      </ThemedView>
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    gap: 8,
+    gap: 16,
+    margin: 32,
     overflow: "hidden",
-    padding: 32,
+  },
+  sectionContainer: {
+    marginTop: 16,
   },
 });

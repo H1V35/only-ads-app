@@ -1,7 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { PropsWithChildren, useState } from "react";
 import { StyleSheet, TouchableOpacity, useColorScheme } from "react-native";
-
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { Colors } from "@/constants/Colors";
@@ -34,13 +33,13 @@ export function Collapsible({
 
 const styles = StyleSheet.create({
   heading: {
-    flexDirection: "row",
     alignItems: "center",
+    flexDirection: "row",
     gap: 6,
   },
   content: {
-    marginTop: 6,
-    marginLeft: 24,
     gap: 16,
+    marginLeft: 24,
+    marginTop: 6,
   },
 });

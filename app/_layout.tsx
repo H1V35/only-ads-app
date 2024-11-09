@@ -9,7 +9,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import mobileAds from "react-native-google-mobile-ads";
-
+import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -39,6 +39,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <StatusBar style="auto" />
       <Stack>
         <Stack.Screen
           name="index"
@@ -47,6 +48,10 @@ export default function RootLayout() {
         <Stack.Screen
           name="banner-ads"
           options={{ title: "Banner Ads", headerTitle: "" }}
+        />
+        <Stack.Screen
+          name="interstitial-ads"
+          options={{ title: "Interstitial Ads", headerTitle: "" }}
         />
         <Stack.Screen name="+not-found" />
       </Stack>

@@ -6,7 +6,6 @@ import {
   TextStyle,
   PressableProps,
 } from "react-native";
-
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
@@ -60,15 +59,15 @@ export default function Button({
 const styles = StyleSheet.create({
   button: {
     alignItems: "center",
-    justifyContent: "center",
     borderRadius: 8,
+    justifyContent: "center",
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
   text: {
     fontSize: 16,
-    lineHeight: 24,
     fontWeight: "500",
+    lineHeight: 24,
   },
   disabled: {
     opacity: 0.5,

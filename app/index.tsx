@@ -1,5 +1,4 @@
 import { Image, StyleSheet } from "react-native";
-
 import ParallaxScrollView from "@/components/parallax-scroll-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
@@ -32,7 +31,7 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
 
-      <ThemedView style={styles.descriptionContainer}>
+      <ThemedView style={styles.sectionContainer}>
         <ThemedText>
           This app includes example code to help you get started with your
           advertising needs.
@@ -43,7 +42,23 @@ export default function HomeScreen() {
             Banner ads are partial adverts which can be integrated within your
             existing application.
           </ThemedText>
-          <Button onPress={() => router.navigate("/banner-ads")}>
+          <Button
+            style={{ marginBottom: 16 }}
+            onPress={() => router.navigate("/banner-ads")}
+          >
+            See more
+          </Button>
+        </Collapsible>
+
+        <Collapsible title="Interstitial Ads">
+          <ThemedText>
+            Interstitials are full-screen ads that cover the interface of an app
+            until closed by the user.
+          </ThemedText>
+          <Button
+            style={{ marginBottom: 16 }}
+            onPress={() => router.navigate("/interstitial-ads")}
+          >
             See more
           </Button>
         </Collapsible>
@@ -54,19 +69,19 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: "row",
     alignItems: "center",
+    flexDirection: "row",
     gap: 8,
   },
-  descriptionContainer: {
+  sectionContainer: {
     gap: 16,
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
     bottom: 0,
+    height: 178,
     left: 0,
     position: "absolute",
+    width: 290,
   },
 });
