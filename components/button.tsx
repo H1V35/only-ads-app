@@ -44,19 +44,14 @@ export default function Button({
       {...props}
     >
       {({ pressed }) => {
-        if (typeof children === "function") {
-          const child = children({ pressed });
-          if (typeof child === "string") {
-            return <Text style={[...baseTextStyle, textStyle]}>{child}</Text>;
-          }
-          return child;
+        const content =
+          typeof children === "function" ? children({ pressed }) : children;
+
+        if (typeof content === "string") {
+          return <Text style={[...baseTextStyle, textStyle]}>{content}</Text>;
         }
 
-        if (typeof children === "string") {
-          return <Text style={[...baseTextStyle, textStyle]}>{children}</Text>;
-        }
-
-        return children;
+        return content;
       }}
     </Pressable>
   );
